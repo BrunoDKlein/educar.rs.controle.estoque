@@ -19,13 +19,15 @@ public class EstoqueLoja {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        List <Produto> produtos=new ArrayList<>();
+                Estoque estoque = new Estoque();
+
+        estoque.adicionarProduto(new Roupa(42, CategoriaProduto.ROUPA, "chinelo", "pra usar no pé", 30, 3));
+        estoque.adicionarProduto(new Eletronico(Voltagem._110V, CategoriaProduto.ELETRÔNICO, "Geladeira", "para esfriar coisas", 5, 1));
+        estoque.adicionarProduto(new Livro("Kahneman", CategoriaProduto.LIVRO, "Rápido e Devagar", "é um livro", 100, 2));
+        System.out.println(estoque.produtos);
+        estoque.removerProduto("Geladeira");
+        System.out.println(estoque.produtos);
         
-        produtos.add(new Roupa(42, CategoriaProduto.ROUPA, "chinelo", "pra usar no pé", 30, 3));
-        produtos.add(new Eletronico(Voltagem._110V, CategoriaProduto.ELETRÔNICO, "Geladeira", "para esfriar coisas", 5, 1));
-        produtos.add(new Livro("Kahneman", CategoriaProduto.LIVRO, "Rápido e Devagar", "é um livro", 100, 2));
-        
-        System.out.println(produtos);
     }
     
 }
